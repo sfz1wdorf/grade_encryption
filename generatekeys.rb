@@ -11,8 +11,9 @@ def coprime?(a, b)
     iscoprime = true
 end
 
+
 while p == q
-    
+    p = Prime.first(rand(11..18)).last
 end
 
 n = p * q
