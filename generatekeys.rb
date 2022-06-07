@@ -1,4 +1,4 @@
-
+require_relative 'cantor'
 require "prime"
 iscoprime = false
 #Generates a random Prime-number
@@ -43,8 +43,7 @@ if d < 0 or coprime?(d, m) == true
 end
 #outputs generated keys
 puts "Privater Schlüssel    :"
-puts "  D: #{d}"
-puts "  N: #{n}"
+puts cantor(d, n)
+
 puts "Öffentlicher Schlüssel:"
-puts "  E: #{e}"
-puts "  N: #{n}"
+puts cantor(e, n)
