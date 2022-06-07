@@ -1,11 +1,17 @@
+# queries D
 puts "D:"
 d = gets.to_i
+
+# queries N
 puts "N:"
-n = gets.to_i
+n = gets.to_i1
+
+# queries C
 puts "Verschlüsselte Note:"
-T = gets.to_i
+C = gets.to_i
 
+# calculates M (M = C^d  mod  N)
+M = C**d % n
 
-V = T**d % n
-
-puts "Deine Note: #{V.to_f/100}"
+# outputs M
+puts "Deine Note: #{M.to_f/100}"
