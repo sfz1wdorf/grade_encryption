@@ -33,3 +33,4 @@ def inv_cantor(z)
       puts "#{(i+1).to_s.rjust(n.to_s.size)}: cantor(#{randx.to_s.rjust(8)}, #{randy.to_s.rjust(8)}) => #{cantorxy.to_s.rjust(17)} => inv_cantor(_) => [#{actual.join(', ')}]"
     end
   end
+
