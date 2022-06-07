@@ -1,3 +1,4 @@
+
 require "prime"
 iscoprime = false
 
@@ -35,6 +36,9 @@ d = extended_euclidean(e, m)[0]
 if d < 0 or coprime?(d, m) == true
     d += m
 end
-puts "d: #{d}"
-puts "e: #{e}"
-puts "n: #{n}"
+puts "Privater Schlüssel    :"
+puts "  D: #{d}"
+puts "  N: #{n}"
+puts "Öffentlicher Schlüssel:"
+puts "  E: #{e}"
+puts "  N: #{n}"
