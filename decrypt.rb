@@ -13,3 +13,4 @@ M = C**d % n
 
 # outputs M
 puts "Deine Note: #{M.to_f/100}"
+
