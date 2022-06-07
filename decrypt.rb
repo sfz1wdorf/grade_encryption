@@ -1,11 +1,11 @@
-puts "d:"
-d = gets.to_i
-puts "n:"
+puts "N: "
 n = gets.to_i
-puts "encrypted Message:"
-T = gets.to_i
+puts "E: "
+e = gets.to_i
+puts "Note:"
+V = gets.to_i
+x = (V*100).to_i
+puts x
+T = x**e % n
 
-
-V = T**d % n
-
-puts "decrypted message: #{V.to_f/100}"
+puts "Verschlüsselte Note: #{T.to_i}" 
