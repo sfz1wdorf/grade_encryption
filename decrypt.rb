@@ -1,12 +1,10 @@
-# queries D
-puts "D:"
-d = gets.to_i
+require_relative 'cantor'
+#pulls private key from user
+puts "privater Schlüssel:"
+L = gets.to_i
+d, n = inv_cantor(L)
 
-# queries N
-puts "N:"
-n = gets.to_i1
-
-# queries C
+# pulls C
 puts "Verschlüsselte Note:"
 C = gets.to_i
 
