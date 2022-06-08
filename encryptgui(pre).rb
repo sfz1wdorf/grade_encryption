@@ -1,4 +1,4 @@
-require 'tk'
+equire 'tk'
 require 'tkextlib/tile'
 require_relative 'cantor'
 
@@ -9,6 +9,9 @@ label = Tk::Tile::Label.new(print){ font TkFont.new('Arial 11'); text 'Öffentli
 key = Tk::Tile::Entry.new(print) { textvariable $key; pack}
 label = Tk::Tile::Label.new(print){ font TkFont.new('Arial 11'); text 'Note: '; pack}
 grade = Tk::Tile::Entry.new(print) { textvariable $grade; pack}
+label = Tk::Tile::Label.new(print){text ""; pack}
+label = Tk::Tile::Label.new(print) {font TkFont.new('Arial 11'); text "Verschlüsselt:"; pack}
+result = Tk::Tile::Entry.new(print) {pack}
 label = Tk::Tile::Label.new(print){text ""; pack}
 action = Tk::Tile::Button.new(root) {text "Verschlüsseln"; default "active"; command { 
     M = (grade.get); L = (key.get);
@@ -21,10 +24,7 @@ action = Tk::Tile::Button.new(root) {text "Verschlüsseln"; default "active"; co
     
     # calculates C (C = M^e  mod  N)
     C = x**e % n
-    
-
-    label = Tk::Tile::Label.new(print) {font TkFont.new('Arial 11'); text "Verschlüsselt:"; pack}
-    result = Tk::Tile::Entry.new(print) {pack}
+    result.delete('0', 'end')
     result.insert 'end', "#{C}"
 
 
