@@ -1,13 +1,20 @@
 require 'tk'
 require 'tkextlib/tile'
 require_relative 'cantor'
-
+runthroughs = 0
 root = TkRoot.new {title "dencrypt your grades"}
 root['geometry'] = '200x240'
 label = Tk::Tile::Label.new(print){ font TkFont.new('Arial 11'); text 'Privater Schlüssel: '; pack}
 key = Tk::Tile::Entry.new(print) { textvariable $key; pack}
 label = Tk::Tile::Label.new(print){ font TkFont.new('Arial 11'); text 'Verschlüsselte Note: '; pack}
 grade = Tk::Tile::Entry.new(print) { textvariable $grade; pack}
+label = Tk::Tile::Label.new(print){text ""; pack}
+label = Tk::Tile::Label.new(print){text "Deine Note:"; pack}
+label = Tk::Tile::Label.new(print){text ""; pack}
+result = Tk::Tile::Entry.new(print) {
+    width 10;
+    pack
+   }
 label = Tk::Tile::Label.new(print){text ""; pack}
 action = Tk::Tile::Button.new(root) {text "Entschlüsseln"; default "active"; command { 
     C = (grade.get); L = (key.get);
@@ -20,10 +27,8 @@ action = Tk::Tile::Button.new(root) {text "Entschlüsseln"; default "active"; co
     
     # calculates M
     M = C**d % n
-    
-
-    label = Tk::Tile::Label.new(print) {font TkFont.new('Arial 11'); text "Deine Note: #{M.to_f/100}"; pack}
-
+    result.delete('0', 'end')
+    result.insert 'end', "#{M}"
 
     }; pack}
 
@@ -34,4 +39,5 @@ action = Tk::Tile::Button.new(root) {text "Entschlüsseln"; default "active"; co
 
 
 Tk.mainloop
+
 
