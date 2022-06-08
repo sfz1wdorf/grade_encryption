@@ -1,8 +1,10 @@
 require_relative 'cantor'
 require "prime"
-iscoprime = false
+
 #Generates a random Prime-number
 #between the 11th and 18th prime
+def newgen
+iscoprime = false
 p = Prime.first(rand(11..18)).last
 q = Prime.first(rand(11..18)).last
 #function to check if two numbers are coprime
@@ -10,7 +12,6 @@ def coprime?(a, b)
     a.gcd(b) == 1
     iscoprime = true
 end
-
 
 while p == q
     p = Prime.first(rand(11..18)).last
@@ -42,9 +43,22 @@ d = extended_euclidean(e, m)[0]
 if d < 0 or coprime?(d, m) == true
     d += m
 end
+$d = d
+$n = n
+$e = e
+end
+newgen
 #outputs generated keys
 puts "Privater Schlüssel    :"
-puts cantor(d, n)
+puts cantor($d, $n)
 
 puts "Öffentlicher Schlüssel:"
-puts cantor(e, n)
+puts cantor($e, $n)
+
+
+def returnpublickey
+    cantor($e, $n)
+end
+def returnprivatekey
+    cantor($d, $n)
+end
