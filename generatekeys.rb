@@ -48,12 +48,7 @@ $n = n
 $e = e
 end
 newgen
-#outputs generated keys
-puts "Privater Schlüssel    :"
-puts cantor($d, $n)
 
-puts "Öffentlicher Schlüssel:"
-puts cantor($e, $n)
 
 
 def returnpublickey
