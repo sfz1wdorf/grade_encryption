@@ -46,8 +46,44 @@ end
 $d = d
 $n = n
 $e = e
+
+
+aa = rand(1..20)
+
+# processes decimal numbers
+ax = (aa*100).to_i
+al = cantor($e, $n)
+
+au, aw = inv_cantor(al)
+
+
+# calculates C (C = M^e  mod  N)
+ac = ax**au % aw
+
+#pulls private key from user
+
+zt = cantor($d, $n)
+
+tf, xd = inv_cantor(zt)
+
+
+
+ck = ac.to_i
+# calculates M (M = C^d  mod  N)
+urs = ck**tf % xd
+res = urs
+
+# outputs M
+$res = res
+$ck = ck
 end
 newgen
+puts $res
+puts $ck
+while $res == $ck
+    newgen
+
+end
 
 
 
